@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Grid</title>
+    <style>
+        body {
+            background-color: rgb(73, 118, 118);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .image {
+            display: grid;
+            gap: 15px;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            width: 80vw;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .image {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .image {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Some pic's</h1>
+    <div class="image">
+        <img src="image/photo_1_2025-02-14_21-39-29.jpg" alt="image">
+        <img src="image/photo_1_2025-02-14_21-39-52.jpg" alt="">
+        <img src="image/photo_2_2025-02-14_21-39-29.jpg" alt="">
+        <img src="image/photo_2_2025-02-14_21-39-52.jpg" alt="">
+        <img src="image/photo_3_2025-02-14_21-39-52.jpg" alt="">
+        <img src="image/photo_2025-02-14_22-18-53.jpg" alt="">
+    </div>
+
+    <script>
+        setTimeout(() => {
+            var a = document.getElementsByClassName('image');
+            a[0].innerHTML=`<center>
+        <h1 >Sorry Bhabhi times up </h1>
+    </center>`
+            // document.write("Times up! sorry...")
+        }, 5000);
+    </script>
+</body>
+</html>
